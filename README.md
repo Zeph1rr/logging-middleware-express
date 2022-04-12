@@ -1,5 +1,7 @@
 # Logging-middleware-express
 
+![npm-version](https://img.shields.io/npm/v/logging-middleware-express?color=green&label=logging-middleware-express&style=plastic)
+
 ## Description
 
 This module can be used for setting log request parameters in api with express module usage.
