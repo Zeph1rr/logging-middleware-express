@@ -1,6 +1,6 @@
 {
   "name": "logging-middleware-express",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Logging middleware for nodejs express api",
   "main": "index.js",
   "keywords": [

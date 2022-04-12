@@ -29,7 +29,7 @@ const loggingMiddleware = (logPath, debugLevel = "minimum", needConsoleLog = tru
             if (req.user) {
                 log.user = req.user.id
             }
-            if (req.params) {
+            if (Object.keys(req.params).length) {
                 log.params = req.params
             }
         }
