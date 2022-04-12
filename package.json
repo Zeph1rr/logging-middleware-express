@@ -1,0 +1,28 @@
+{
+  "name": "logging-middleware-express",
+  "version": "1.0.0",
+  "description": "Logging middleware for nodejs express api",
+  "main": "index.js",
+  "keywords": [
+    "express",
+    "logger",
+    "logging",
+    "middleware",
+    "backend"
+  ],
+  "author": "Zeph1rr <grianton535@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "node.date-time": "^1.2.2"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "files": [
+    "LICENSE",
+    "Readme.md",
+    "index.js"
+  ],
+  "repository": "Zeph1rr/logging-middleware-express",
+  "homepage": "Zeph1rr/logging-middleware-express#README.md"
+}
