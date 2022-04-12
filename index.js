@@ -7,6 +7,7 @@ const loggingMiddleware = (logPath, debugLevel = "minimum", needConsoleLog = tru
      * debug levels:
      * anonymous - not logging client ip
      * full - log everything
+     * minimum - log only http info
      */
     const availableDebugLevel = ["anonymous", "full", "minimum"]
     if (!availableDebugLevel.includes(debugLevel)) {
