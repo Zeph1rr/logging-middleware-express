@@ -1,6 +1,4 @@
-const fs = require("fs")
-const format = require("node.date-time");
-const path = require('path');
+const logger = require('./log')
 
 const loggingMiddleware = (logPath, debugLevel = "minimum", needConsoleLog = true) => {
     /**
@@ -16,12 +14,8 @@ const loggingMiddleware = (logPath, debugLevel = "minimum", needConsoleLog = tru
 
     return (req, res, next) => {
         const remoteIP = req.ip.split(":").pop()
-
-        const today = new Date().format("yyyy-MM-dd")
-        const now = new Date().format("yyyy-MM-dd HH:mm:SS.ms")
         const log = {
             DEBUGLEVEL: debugLevel,
-            timestamp: now,
             method: req.method,
             url: req.originalUrl
         }
@@ -36,13 +30,7 @@ const loggingMiddleware = (logPath, debugLevel = "minimum", needConsoleLog = tru
         if (debugLevel !== "anonymous") {
             log.remote = remoteIP
         }
-        const data = JSON.stringify(log)
-        if (needConsoleLog) {
-            console.log(data)
-        }
-        fs.appendFile(path.join(logPath, `log-${today}.txt`), data + '\n', err => {
-            if (err) throw err
-        })
+        logger(logPath, log, needConsoleLog)
         next()
     }
 }
