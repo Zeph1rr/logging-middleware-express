@@ -30,8 +30,10 @@ const loggingMiddleware = (logPath, debugLevel = "minimum", needConsoleLog = tru
         if (debugLevel !== "anonymous") {
             log.remote = remoteIP
         }
+        const response = res.data
         logger(logPath, log, needConsoleLog)
-        next()
+        logger(logPath, response, needConsoleLog)
+        return res.json(res.data)
     }
 }
 
