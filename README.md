@@ -47,7 +47,7 @@ module.exports = loggingMiddleware(logPath, debugLevel, needConsoleLog)
 - Require logger in your index.js file
 
 ```
-const loggingMiddleware = require('../middleware/logging.middleware')
+const loggingMiddleware = require('./middleware/logging.middleware')
 ```
 
 - Add logger as middleware in your app before ErrorHandler
