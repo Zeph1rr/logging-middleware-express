@@ -31,8 +31,8 @@ const loggingMiddleware = (logPath, debugLevel = "minimum", needConsoleLog = tru
             log.remote = remoteIP
         }
         const response = res.data
-        logger(logPath, log, needConsoleLog)
-        logger(logPath, response, needConsoleLog)
+        logger(logPath, {type: "REQUEST", ...log}, needConsoleLog)
+        logger(logPath, {type: "RESPONSE", ...response}, needConsoleLog)
         return res.json(res.data)
     }
 }

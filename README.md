@@ -44,16 +44,23 @@ const debugLevel = "full"/"anonymous"/"minimum" ("minimum by default")
 module.exports = loggingMiddleware(logPath, debugLevel, needConsoleLog)
 ```
 
-- Require logger in your router file
+- Require logger in your index.js file
 
 ```
 const loggingMiddleware = require('../middleware/logging.middleware')
 ```
 
-- Add logger as middleware in your routes
+- Add logger as middleware in your app before ErrorHandler
 
 ```
-router.get('/', authMiddleware, loggingMiddleware, controller.getAll)
+app.use(loggingMiddleware)
+```
+
+- At the end of your controller functions add your response data in data field
+
+```
+response.data = your_response_data
+next()
 ```
 
 - Enjoy your logs!
